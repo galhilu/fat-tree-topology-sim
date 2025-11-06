@@ -154,28 +154,28 @@ def main():
     plt.show()
 
     # 2) number of switches with multiple failed links (at a 1% failure rate) as a function of switch port count
-    k = [4, 6, 8, 10, 12, 48]
+    k_1p_fail = [4, 6, 8, 10, 12, 48]
 
     cnt = []
-    for i in k:
+    for i in k_1p_fail:
         cnt.append(switches_with_multifails_at_1pct(i))
 
     plt.title("Switches with multiple failed links")
-    plt.plot(np.array(k), np.array(cnt))
+    plt.plot(np.array(k_1p_fail), np.array(cnt))
     plt.xlabel("Port count")
     plt.ylabel("Switches")
     plt.show()
 
 
     # 3) number of hosts supported by the network as a function of switch port count
-    k = [4, 6, 8, 10, 12]
+    k_hosts = [4, 6, 8, 10, 12]
     
     cnt = []
-    for i in k:
+    for i in k_hosts:
         cnt.append((i**3)//4)
     
     plt.title("Number of hosts supported vs switch port count")
-    plt.plot(np.array(k), np.array(cnt))
+    plt.plot(np.array(k_hosts), np.array(cnt))
     plt.xlabel("Port count")
     plt.ylabel("Hosts")
     plt.show()

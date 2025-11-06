@@ -11,7 +11,9 @@ Show how the amount of paralle paths between leaf switches degrades as link fail
 Changeable parameters:
 
   `k_for_paths`: int, switch port count, needs to be even.
+  
   `probs`: list of floats, the list of failure probabilities to be tested.
+  
   `trials`: int, number of repetitions for more accurate results.
 
 --------------------------------

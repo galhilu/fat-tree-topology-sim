@@ -21,7 +21,7 @@ Estimate how the number of parallel paths between leaf switches degrades as link
 - `trials: int` – number of Monte‑Carlo repetitions per probability value.
 
 **Result** 
-for `k = 8` and avaraged acrossed 10 trials.
+for `k = 8` and avaraged across 10 trials.
 
 ![Number of paths vs link failure probability](path_num.png)
 
@@ -44,7 +44,7 @@ For different values of `k`, count how many switches end up with **more than two
 - `k_1p_fail: List[int]` – list of port counts to evaluate.
 
 **Result**
-avaraged acrossed 10 trials.
+avaraged across 10 trials.
 
 ![Switches with multiple failed links](multi_fail.png)
 

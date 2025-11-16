@@ -4,9 +4,6 @@ This repository contains a simple simulator for k-ary fat-tree topologies.
 It runs three small experiments that build intuition about **path redundancy**, **failure impact**, and **scalability**.  
 Each experiment has tunable parameters in the code and produces a Matplotlib figure that is also embedded below.
 
-> To see the figures on GitHub, place this `README.md` file in the same directory as the three PNG files:
-> `path_num.png`, `multi_fail.png`, and `host_support.png`.
-
 ---
 
 ## 1. Average paths vs. link failure probability
@@ -17,13 +14,14 @@ Estimate how the number of parallel paths between leaf switches degrades as link
 - **In-pod paths** – between two leaves in the same pod.  
 - **Out-of-pod paths** – between leaves in different pods.
 
-**Changeable parameters** (in the code)
+**Changeable parameters**
 
 - `k_for_paths: int` – switch port count, must be even.  
 - `probs: List[float]` – list of link failure probabilities to simulate.  
 - `trials: int` – number of Monte‑Carlo repetitions per probability value.
 
-**Result**
+**Result** 
+for `k = 8` and avaraged acrossed 10 trials.
 
 ![Number of paths vs link failure probability](path_num.png)
 
@@ -46,6 +44,7 @@ For different values of `k`, count how many switches end up with **more than two
 - `k_1p_fail: List[int]` – list of port counts to evaluate.
 
 **Result**
+avaraged acrossed 10 trials.
 
 ![Switches with multiple failed links](multi_fail.png)
 
@@ -79,13 +78,3 @@ Visualize how the theoretical host capacity of a k‑ary fat‑tree scales with 
 
 This experiment makes the scalability of fat‑trees visually clear and motivates why large port‑count switches are attractive in data‑center designs—despite the reliability trade‑offs shown in Experiment 2.
 
----
-
-## How to use this repository
-
-1. Place `README.md` in the same directory as the simulation script and the three PNG files:  
-   `path_num.png`, `multi_fail.png`, `host_support.png`.  
-2. Run the script to regenerate the plots if needed; the README will automatically display the updated images on GitHub.  
-3. Adjust the parameters (`k_for_paths`, `probs`, `trials`, `k_1p_fail`, `k_hosts`) to explore different fat‑tree sizes and failure scenarios.
-
-Together, these three experiments provide a compact, visual summary of the robustness and scalability characteristics of k‑ary fat‑tree topologies.
